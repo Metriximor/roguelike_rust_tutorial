@@ -21,12 +21,20 @@ pub fn attempt_move_player(x: i32, y: i32, ecs: &mut World) {
 
 pub fn player_input(gs: &mut State, ctx: &mut Rltk) {
     match ctx.key {
-        None => {}
+        None => {} // Nothing happened
         Some(key) => match key {
             VirtualKeyCode::Left => attempt_move_player(-1, 0, &mut gs.ecs),
+            VirtualKeyCode::Numpad4 => attempt_move_player(-1, 0, &mut gs.ecs),
+            VirtualKeyCode::H => attempt_move_player(-1, 0, &mut gs.ecs),
             VirtualKeyCode::Right => attempt_move_player(1, 0, &mut gs.ecs),
+            VirtualKeyCode::Numpad6 => attempt_move_player(1, 0, &mut gs.ecs),
+            VirtualKeyCode::L => attempt_move_player(1, 0, &mut gs.ecs),
             VirtualKeyCode::Up => attempt_move_player(0, -1, &mut gs.ecs),
+            VirtualKeyCode::Numpad8 => attempt_move_player(0, -1, &mut gs.ecs),
+            VirtualKeyCode::K => attempt_move_player(0, -1, &mut gs.ecs),
             VirtualKeyCode::Down => attempt_move_player(0, 1, &mut gs.ecs),
+            VirtualKeyCode::Numpad2 => attempt_move_player(0, 1, &mut gs.ecs),
+            VirtualKeyCode::J => attempt_move_player(0, 1, &mut gs.ecs),
             _ => {}
         },
     }
