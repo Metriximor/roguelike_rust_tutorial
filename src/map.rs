@@ -50,7 +50,7 @@ pub fn new_map_rooms_and_corridors() -> (Vec<Rect>, Vec<TileType>) {
     const MAX_SIZE: i32 = 10;
 
     let mut rng = RandomNumberGenerator::new();
-    for _ in 0..MAX_ROOMS {
+    for _i in 0..MAX_ROOMS {
         let w = rng.range(MIN_SIZE, MAX_SIZE);
         let h = rng.range(MIN_SIZE, MAX_SIZE);
         let x = rng.roll_dice(1, 80 - w - 1) - 1;
